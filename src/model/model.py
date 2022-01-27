@@ -36,13 +36,37 @@ for i in range(len(df)):
     if round(df.iloc[i,7])==(T1):
         print('TOP 1 : {} avec un total de {} vues ! '.format(df.iloc[i,2],round(df.iloc[i,7])))
 
-
-def ComputeMean():
+def ComputeMean(df):
     mean = 0
+    z=0
+    sommeT = 0
+    df['likes'] = df['likes'].fillna(0)
+    for i in range(len(df)):
+        if df.iloc[i,8]==0:
+            z+=1
+    df = df.drop_duplicates(subset=['video_id'], keep='last')
+    for i in range(len(df)):
+        mean+=df.iloc[i,8]
+    sommeT=len(df)-z
+    print('Toutes les vidéos réunies cumulent une moyenne de {} likes.'.format(round(mean/sommeT)))
     return (mean)
+ComputeMean(df)
 
-def ComputeMedian:
+
+def ComputeMedian(df):
     median = 0
-    return (median)    
-    
+    z = 0
+    sommeT = 0
+    df['dislikes'] = df['dislikes'].fillna(0)
+    for i in range(len(df)):
+        if df.iloc[i, 9] == 0:
+            z += 1
+    df = df.drop_duplicates(subset=['video_id'], keep='last')
+    for i in range(len(df)):
+        median += df.iloc[i, 9]
+    sommeT = len(df) - z
+    print('Toutes les vidéos réunies cumulent une moyenne de {} dislikes.'.format(round(median/sommeT)))
+    return (median)
+ComputeMedian(df)
+
     
