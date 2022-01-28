@@ -1,5 +1,5 @@
 import pandas as pds
-df = pds.read_csv("mergedTab.csv", encoding='ISO-8859-1', sep=';')
+df = pds.read_csv("../../data/processed/mergedTab.csv", encoding='ISO-8859-1', sep=';')
 top=[]
 df['views'] = df['views'].fillna(0)
 df = df.drop_duplicates(subset=['video_id'], keep='last')

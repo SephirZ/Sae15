@@ -4,7 +4,7 @@ catID=['2','1','10','15','17','18','19','20','21','22','23','24','25','26','27',
 def pourcentage(x):
     pourc=x*100/46732
     return pourc
-df = pds.read_csv("mergedTab.csv", encoding='ISO-8859-1', sep=';')
+df = pds.read_csv("../../data/processed/mergedTab.csv", encoding='ISO-8859-1', sep=';')
 aber=0
 miss=0
 corr=0
