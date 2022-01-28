@@ -12,4 +12,4 @@ joined_list = glob.glob(joined_files)
 # Les fichiers sont fusionnés
 df = pd.concat(map(pd.read_csv, joined_list), ignore_index=True)
 print(df)
-export_csv = df.to_csv ('mergedTab.csv', index=None, header=True, encoding='utf-8', sep=',')
+export_csv = df.to_csv ('mergedTab.csv', index=None, header=True, encoding='utf-8', sep=';')
