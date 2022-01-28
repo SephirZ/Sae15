@@ -3,7 +3,7 @@ import pandas as pd
 import glob
 import os
 
-# detection des ficchiers
+# detection des fichiers
 joined_files = os.path.join('U:\Documents\TESTCSV', "youtube*.csv")
 
 # une liste des fichiers est créer.
